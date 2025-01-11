@@ -1,0 +1,128 @@
+    <!-- Navbar: Start -->
+    <nav class="layout-navbar container shadow-none py-0">
+        <div class="navbar navbar-expand-lg landing-navbar border-top-0 px-3 px-md-4">
+            <!-- Menu logo wrapper: Start -->
+            <div class="navbar-brand app-brand demo d-flex py-0 py-lg-2 me-4">
+                <!-- Mobile menu toggle -->
+                <button class="navbar-toggler border-0 px-0 me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="tf-icons ri-menu-fill ri-24px align-middle"></i>
+                </button>
+                
+                <a href="index.html" class="app-brand-link">
+                    <span class="app-brand-logo demo">
+                        <span style="color:#666cff;">
+                            <img src="assets/img/front-pages/logo/logo.png"
+                            alt="Logo ERP INNOV"
+                            style="width: 40px; height: 40px;"
+                            class="img-fluid">
+                        </span>
+                    </span>
+                    <span class="app-brand-text demo menu-text fw-semibold ms-2">ERP INNOV</span>
+                </a>
+            </div>
+    
+            <!-- Menu wrapper -->
+            <div class="collapse navbar-collapse landing-nav-menu" id="navbarSupportedContent">
+                <button class="navbar-toggler border-0 position-absolute end-0 top-0 d-lg-none" 
+                        type="button" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#navbarSupportedContent">
+                    <i class="tf-icons ri-close-fill"></i>
+                </button>
+    
+                <!-- Main menu - Now centered -->
+               <ul class="navbar-nav mx-auto p-3 p-lg-0">
+                <li class="nav-item mx-2">  <!-- Ajout de mx-2 pour l'espacement horizontal -->
+                    <a class="nav-link fw-medium px-3 d-flex align-items-center gap-2" href="#landingHero">
+                        <i class="tf-icons ri-home-line"></i>
+                        <span>Accueil</span>
+                    </a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link fw-medium px-3 d-flex align-items-center gap-2" href="#landingPricing">
+                        <i class="tf-icons ri-price-tag-line"></i>
+                        <span>Tarifs</span>
+                    </a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link fw-medium px-3 d-flex align-items-center gap-2" href="#landingFAQ">
+                        <i class="tf-icons ri-questionnaire-line"></i>
+                        <span>FAQ</span>
+                    </a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link fw-medium px-3 d-flex align-items-center gap-2" href="#landingContact">
+                        <i class="tf-icons ri-message-2-line"></i>
+                        <span>Contact</span>
+                    </a>
+                </li>
+            </ul>
+            </div>
+    
+            <!-- Right side actions -->
+            <ul class="navbar-nav flex-row align-items-center ms-auto">
+                <!-- Login/Register button -->
+                <li>
+                    <a href="/auth/login" class="btn btn-primary rounded-pill px-3 px-sm-4">
+                        <i class="tf-icons ri-user-line me-md-1"></i>
+                        <span class="d-none d-md-inline-block">Login/Register</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Navbar: End -->
+
+    <style>
+        /* Vos styles existants pour les liens */
+        .nav-link {
+            position: relative;
+            transition: all 0.2s ease;
+        }
+        
+        .nav-link span::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #666cff;
+            transition: width 0.2s ease;
+            opacity: 0;
+        }
+        
+        .nav-link:hover span::after,
+        .nav-link.active span::after {
+            width: 100%;
+            opacity: 1;
+        }
+        
+        .nav-link:hover {
+            color: #666cff;
+        }
+        
+        .nav-link:hover i {
+            transform: translateY(-1px);
+        }
+        
+        .nav-link i {
+            transition: transform 0.2s ease;
+        }
+        
+        /* Styles pour le menu mobile */
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                position: relative;
+                background: white;
+                border-radius: 8px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+                padding-top: 1rem; /* Espace pour le bouton de fermeture */
+            }
+        
+            .navbar-collapse .navbar-toggler {
+                z-index: 10;
+                margin: 0.5rem;
+            }
+        }
+    </style>

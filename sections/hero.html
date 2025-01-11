@@ -1,0 +1,191 @@
+<!-- Hero Section: Start -->
+<section id="landingHero" class="min-vh-100 d-flex align-items-center position-relative overflow-hidden bg-light">
+    <!-- Animated background -->
+    <div class="position-absolute w-100 h-100 top-0 start-0" id="particles-bg"></div>
+    
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <!-- Text Content -->
+            <div class="col-lg-6 mb-5 mb-lg-0 text-center text-lg-start position-relative" data-aos="fade-right">
+                <span class="badge bg-primary px-3 py-2 mb-3 rounded-pill badge-animate d-inline-flex align-items-center">
+                    <i class="bi bi-stars me-2"></i>
+                    Nouveau
+                </span>
+                <h1 class="display-4 fw-bold mb-4 hero-title">
+                    <span class="gradient-text">Solution SaaS</span> complète pour 
+                    <span class="primary-dark">votre entreprise</span>
+                </h1>
+                <p class="lead mb-4 text-muted">
+                    <span class="text-emphasis">Transformez votre business</span> sans coder. Notre plateforme offre toutes les fonctionnalités marketing dont vous avez besoin, avec une 
+                    <span class="text-primary">personnalisation en temps réel</span>.
+                </p>
+                <div class="d-flex gap-3 justify-content-center justify-content-lg-start position-relative" style="z-index: 10;">
+                    <a href="/start" class="btn btn-primary btn-lg px-4 rounded-pill btn-animate">
+                        Commencer maintenant
+                        <i class="bi bi-arrow-right ms-2 icon-animate"></i>
+                    </a>
+                    <a href="/demo" class="btn btn-outline-primary btn-lg px-4 rounded-pill btn-animate">
+                        Voir la démo
+                        <i class="bi bi-play-circle ms-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Dashboard Preview -->
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="position-relative">
+                    <!-- Main dashboard image -->
+                    <img src="assets/img/front-pages/landing-page/hero-dashboard-light.png" 
+                         class="img-fluid rounded-4 shadow-lg" 
+                         alt="Dashboard Preview"
+                         id="dashboardPreview">
+                    
+                    <!-- Floating elements -->
+                    <div class="floating-element position-absolute top-0 end-0 bg-white p-3 rounded-4 shadow-lg" style="transform: rotate(10deg)">
+                        <div class="d-flex align-items-center">
+                            <div class="rounded-circle bg-success p-2 me-2"></div>
+                            <span class="fw-bold">+24% Croissance</span>
+                        </div>
+                    </div>
+                    
+                    <div class="floating-element position-absolute bottom-0 start-0 bg-white p-3 rounded-4 shadow-lg" style="transform: rotate(-5deg)">
+                        <div class="d-flex align-items-center">
+                            <div class="rounded-circle bg-primary p-2 me-2"></div>
+                            <span class="fw-bold">98% Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Custom CSS -->
+<style>
+/* Styles originaux */
+.floating-element {
+    transition: transform 0.3s ease;
+    z-index: 2;
+}
+
+#particles-bg {
+    z-index: 0;
+}
+
+/* Animation keyframes originaux */
+@keyframes float {
+    0% { transform: translateY(0px) rotate(var(--rotation)); }
+    50% { transform: translateY(-20px) rotate(var(--rotation)); }
+    100% { transform: translateY(0px) rotate(var(--rotation)); }
+}
+
+.floating-element:nth-child(1) {
+    --rotation: 10deg;
+    animation: float 4s ease-in-out infinite;
+}
+
+.floating-element:nth-child(2) {
+    --rotation: -5deg;
+    animation: float 4s ease-in-out infinite 1s;
+}
+
+/* Nouveaux styles pour le texte et les boutons */
+.gradient-text {
+    background: linear-gradient(120deg, #2563eb, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-title {
+    line-height: 1.2;
+}
+
+.primary-dark {
+    color: #1a56db;
+}
+
+.text-emphasis {
+    font-weight: 500;
+    color: #1f2937;
+}
+
+.badge-animate {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-animate {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-animate:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+}
+
+.icon-animate {
+    transition: transform 0.2s ease;
+}
+
+.btn-animate:hover .icon-animate {
+    transform: translateX(3px);
+}
+</style>
+
+<!-- JavaScript for animations and interactions -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize AOS
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
+
+    // Particles background
+    particlesJS('particles-bg', {
+        particles: {
+            number: {
+                value: 80,
+                density: {
+                    enable: true,
+                    value_area: 800
+                }
+            },
+            color: {
+                value: '#0d6efd'
+            },
+            opacity: {
+                value: 0.1
+            },
+            size: {
+                value: 3
+            },
+            line_linked: {
+                enable: true,
+                distance: 150,
+                color: '#0d6efd',
+                opacity: 0.1,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 2
+            }
+        }
+    });
+
+    // Mouse parallax effect for dashboard preview
+    const dashboard = document.getElementById('dashboardPreview');
+    document.addEventListener('mousemove', (e) => {
+        const mouseX = e.clientX / window.innerWidth - 0.5;
+        const mouseY = e.clientY / window.innerHeight - 0.5;
+        
+        dashboard.style.transform = `
+            perspective(1000px)
+            rotateY(${mouseX * 5}deg)
+            rotateX(${-mouseY * 5}deg)
+        `;
+    });
+});
+</script>
